@@ -14,5 +14,3 @@ Area = zeros(nSections,1);
 for i = 1:nSections
 Area(i) = ((LineFunc(i)-LineFunc(i+1))*dx)/2 + LineFunc(i+1)*dx;
 end
-
-sum(Area)
