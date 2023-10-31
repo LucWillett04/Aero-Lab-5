@@ -27,8 +27,9 @@ for j = 1:nSections
 end
 
 % Wiffle Tree Dimensions
-Centroid(5) = (Length/2)*(LineFunc(1) + 2*LineFunc(3))/(3*(LineFunc(1) + LineFunc(3)));
-Centroid(6) = (Length/2)*(LineFunc(3) + 2*LineFunc(5))/(3*(LineFunc(3) + LineFunc(5))) + Length/2;
+
+Centroid(5) = ((Area(1)*Centroid(1) + Area(2)*Centroid(2))/(Area(1)+Area(2)));
+Centroid(6) = ((Area(3)*Centroid(3) + Area(4)*Centroid(4))/(Area(3)+Area(4)));
 
 Rod1 = Centroid(6) - Centroid(5);
 Rod2 = Centroid(2) - Centroid(1);
