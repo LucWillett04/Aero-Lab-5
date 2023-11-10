@@ -35,3 +35,7 @@ Rod1 = Centroid(6) - Centroid(5);
 Rod2 = Centroid(2) - Centroid(1);
 Rod3 = Centroid(4) - Centroid(3);
 
+figure()
+scatter(Centroid,1)
+hold on
+
