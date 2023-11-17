@@ -3,7 +3,7 @@ clc;clear;close all
 nSections = 4;
 Length = 10;
 w0 = 10;
-w1 = 5;
+w1 = 0;
 
 dx = Length/nSections;
 x = 0:dx:Length;
@@ -30,12 +30,17 @@ end
 
 Centroid(5) = ((Area(1)*Centroid(1) + Area(2)*Centroid(2))/(Area(1)+Area(2)));
 Centroid(6) = ((Area(3)*Centroid(3) + Area(4)*Centroid(4))/(Area(3)+Area(4)));
+Centroid(7) = ((Centroid(5)*(Area(1)+Area(2))+Centroid(6)*(Area(3)+Area(4)))/(sum(Area)));
 
 Rod1 = Centroid(6) - Centroid(5);
 Rod2 = Centroid(2) - Centroid(1);
 Rod3 = Centroid(4) - Centroid(3);
 
 figure()
-scatter(Centroid,1)
+scatter(Centroid(1:4),1)
 hold on
+scatter(Centroid(5:6),0.5)
+scatter(Centroid(7), 0)
+ylim([-0.25, 1.25])
+xlim([-0.25 10.25])
 
